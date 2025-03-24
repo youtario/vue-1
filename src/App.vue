@@ -1,30 +1,21 @@
 <script setup>
 import { ref } from 'vue';
-const valor = ref(10)
+const contador = ref(0)
 
-function dupricar() {
-  valor.value= valor.value * 2
+function incrimentar() {
+  contador.value++
 }
-function converter_para_farenheit() {
-  temperatura_em_farenheit.value = (temperatura_em_celsius.value)
+
+function decrementar() {
+  contador.value--
 }
 </script>
 
 <template>
- <h1>Olá mundo!</h1>
- <button v-on:click="valor++">incrimentar</button>
- <button v-on:click="valor--">decrementar</button>
- <button v-on:click="dupricar">dupricar</button>
- <p>valor: {{ valor }}</p>
- <hr>
- <h2>conversor de temperatura</h2>
- <input v-model="temperatura_em_celsius" type="number" step="0.1">
- <button v-on:click="converter_para_farenheit">converter</button>
- <p>temperatura em farenheit: </p>
+ <h1>Meu contador</h1>
+ <p>Valor do contador: {{ contador }}</p>
+ <button v-on:click="incrimentar">+</button>
+ <button v-on:click="decrementar">-</button>
 </template>
 
-<style scoped>
-button {
-  font-weight: bold;
-}
-</style>
+<style scoped></style>
